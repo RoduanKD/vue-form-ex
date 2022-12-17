@@ -1,6 +1,8 @@
 <template>
-  <li class="item">#{{ id }} {{ name }}: {{ email }}
-    <span class="icon" @click="$emit('RemoveUser', id)">x</span>
+  <li class="item">
+    #{{ id }} {{ name }}:
+    <slot></slot>
+    {{ email }}
   </li>
 </template>
 

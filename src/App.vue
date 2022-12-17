@@ -34,7 +34,9 @@
     <input type="search" placeholder="Name" v-model.trim="searchValue">
 
     <ul class="items">
-      <UserItem v-for="user in filteredList" :key="user.id" v-bind="user" @RemoveUser="removeUserById" />
+      <UserItem v-for="user in filteredList" :key="user.id" v-bind="user">
+        <span class="icon" @click="removeUserById(user.id)">x</span>
+      </UserItem>
     </ul>
   </section>
 </template>
