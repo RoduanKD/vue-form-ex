@@ -34,7 +34,7 @@
     <input type="search" placeholder="Name" v-model.trim="searchValue">
 
     <ul class="items">
-      <UserItem v-for="user in filteredList" :key="user.id" v-bind="user" />
+      <UserItem v-for="user in filteredList" :key="user.id" v-bind="user" @RemoveUser="removeUserById" />
     </ul>
   </section>
 </template>
@@ -131,6 +131,14 @@ export default {
     },
 
     removeUser(index) {
+      this.usersList.splice(index, 1)
+    },
+
+    removeUserById(id) {
+      const index = this.usersList.findIndex(function (user) {
+        return user.id === id
+      })
+
       this.usersList.splice(index, 1)
     },
 

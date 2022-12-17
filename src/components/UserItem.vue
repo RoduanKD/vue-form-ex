@@ -1,6 +1,6 @@
 <template>
   <li class="item">#{{ id }} {{ name }}: {{ email }}
-    <span class="icon" @click="removeUser(i)">x</span>
+    <span class="icon" @click="$emit('RemoveUser', id)">x</span>
   </li>
 </template>
 
