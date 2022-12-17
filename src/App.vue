@@ -34,7 +34,7 @@
     <input type="search" placeholder="Name" v-model.trim="searchValue">
 
     <ul class="items">
-      <UserItem v-for="user in filteredList" :key="user.id" :id="user.id" :name="user.name" :email="user.email" />
+      <UserItem v-for="user in filteredList" :key="user.id" v-bind="user" />
     </ul>
   </section>
 </template>
