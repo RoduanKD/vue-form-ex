@@ -6,6 +6,19 @@
 
 <script>
 export default {
-  props: ['id', 'name', 'email'],
+  props: {
+    id: {
+      type: Number,
+      required: true,
+    },
+    name: {
+      type: String,
+      default: 'User',
+    },
+    email: {
+      type: String,
+      required: true
+    },
+  },
 }
 </script>
