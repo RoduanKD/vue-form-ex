@@ -34,15 +34,17 @@
     <input type="search" placeholder="Name" v-model.trim="searchValue">
 
     <ul class="items">
-      <li v-for="(user, i) in filteredList" class="item" :key="user.id">#{{ user.id }} {{ user.name }}: {{ user.email }}
-        <span class="icon" @click="removeUser(i)">x</span>
-      </li>
+      <UserItem v-for="user in filteredList" :key="user.id" :id="user.id" :name="user.name" :email="user.email" />
     </ul>
   </section>
 </template>
 
 <script>
+import UserItem from '@/components/UserItem.vue'
+
 export default {
+  components: { UserItem },
+
   data() {
     return {
       message: '',
